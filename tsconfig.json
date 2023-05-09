@@ -2,6 +2,8 @@
   "files": [],
   "compilerOptions": {
     // ...
+    "ignoreDeprecations": "5.0",
+    // "verbatimModuleSyntax": true,
     "types": ["naive-ui/volar"]
   },
   "references": [

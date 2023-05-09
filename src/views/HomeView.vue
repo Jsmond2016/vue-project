@@ -1,24 +1,16 @@
 <script setup lang="ts">
 // import TheWelcome from '../components/TheWelcome.vue'
-import { reactive } from "vue";
-import {
-  NButton,
-  NCard,
-  NLayout,
-  NLayoutHeader,
-  NLayoutContent,
-  NGrid,
-  NGi,
-} from "naive-ui";
-import $http from "../api/index";
+import { reactive } from 'vue'
+import { NButton, NCard, NLayout, NLayoutHeader, NLayoutContent, NGrid, NGi } from 'naive-ui'
+import $http from '../api/index'
 
-const state = reactive({ data: "" });
+const state = reactive({ data: '' })
 const handleClick = async () => {
-  const { data } = await $http.get("/test", { params: { code: 123 } });
-  console.log("data: ", data);
-  state.data = data;
-  console.log("click");
-};
+  const { data } = await $http.get('/test', { params: { code: 123 } })
+  console.log('data: ', data)
+  state.data = data
+  console.log('click')
+}
 </script>
 
 <template>
