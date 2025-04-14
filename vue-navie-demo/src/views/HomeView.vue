@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // import TheWelcome from '../components/TheWelcome.vue'
 import { reactive } from "vue";
-import { NButton, NCard, NLayout, NLayoutHeader, NLayoutContent, NGrid, NGi } from "naive-ui";
+import { NButton, NCard, NLayout, NSpace, NLayoutFooter, NLayoutHeader, NLayoutContent, NGrid, NGi } from "naive-ui";
 import $http from "../api/index";
 
 const state = reactive({ data: "" });
@@ -15,7 +15,7 @@ const handleClick = async () => {
 
 <template>
   <n-space vertical size="large">
-    <n-layout>
+    <n-layout has-sider>
       <n-layout-header>测试</n-layout-header>
       <n-layout-content content-style="padding: 24px;">
         <n-grid x-gap="12" :cols="4">
