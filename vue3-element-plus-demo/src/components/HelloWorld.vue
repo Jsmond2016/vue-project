@@ -3,23 +3,21 @@
 
   <p>count: {{ count }}</p>
 
-  <el-button type="primary" @click="minus">减1</el-button>
-  <el-button type="warning" @click="add">加1</el-button>
+  <el-button type="primary" @click="decrement">减1</el-button>
+  <el-button type="warning" @click="increment">加1</el-button>
   <el-button type="info" @click="jumpToAbout">跳转页面-About</el-button>
 </template>
 
 <script setup lang="ts">
 import { ref, defineComponent, computed } from "vue";
-import { useStore } from "vuex";
 import { useRouter } from "vue-router"
-const store = useStore();
-const count = computed(() => store.state.count);
-const add = () => {
-  store.commit("increment");
-};
-const minus = () => {
-  store.commit("decrement");
-};
+import { storeToRefs } from 'pinia'
+import { useCounterStore } from '@/store'
+
+
+const countStore = useCounterStore();
+const { increment, decrement } = countStore;
+const { count } = storeToRefs(countStore)
 
 const history = useRouter()
 const jumpToAbout = () => {
